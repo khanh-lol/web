@@ -1,51 +1,258 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Thế giới của anhhhh</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q ❤️ L - Tình Yêu Bất Diệt</title>
+  <style>
+    :root {
+      --primary-color: #ff3366;
+      --secondary-color: #ff99cc;
+      --golden-gradient: linear-gradient(45deg, #ffd700, #ff69b4);
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/spinload.css">
-    <link rel="stylesheet" type="text/css" href=" https://fonts.googleapis.com/css?family=Pacifico" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- Preloader -->
-    <div id="preloader">
-      <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-      </div>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 100%, #fff0f5, #ffe4e1);
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .romantic-title {
+      font-size: 4rem;
+      color: var(--primary-color);
+      text-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
+      margin: 20px;
+      transform: rotate(-3deg);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    #loveButton {
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      background: var(--golden-gradient);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #loveButton:hover {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 8px 25px rgba(255, 51, 102, 0.5);
+    }
+
+    .message-container {
+      width: 70vw;
+      min-height: 200px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    .love-text {
+      font-size: 2rem;
+      line-height: 1.6;
+      text-align: center;
+      background: var(--golden-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .eternal-container {
+      position: fixed;
+      bottom: 20%;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+      animation: finalFadeIn 2s forwards;
+    }
+
+    .heart-icon {
+      font-size: 4rem;
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+      text-shadow: 0 0 20px rgba(255,51,102,0.5);
+      margin: 0 15px;
+    }
+
+    .days-counter {
+      font-size: 2rem;
+      color: #666;
+      margin-top: 20px;
+      animation: textGlow 2s infinite alternate;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-20px) rotate(3deg); }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(0.9); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes finalFadeIn {
+      from { opacity: 0; transform: translateY(50px) scale(0.5); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 0 0 5px rgba(102,102,102,0.3); }
+      to { text-shadow: 0 0 15px rgba(102,102,102,0.7); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      animation: floatHeart 4s infinite linear;
+      opacity: 0.8;
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-50px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="romantic-title">???</h1>
+  <button id="loveButton">Mở Trái Tim ❤️</button>
+  <div class="message-container">
+    <div id="loveMessage" class="love-text"></div>
   </div>
-      <div id="bg"></div>
-      <div class="content">
-        <header>
-          <h2 id="title"></h2>
-          <h4 id="desc"></h4>
-        </header>
-        <button id="yes" type="button" class="btn btn-danger btn-lg"> </button>
-        <button id="no" type="button" class="btn btn-info btn-lg"></button>
-      </div>
-    </div>
-    <audio src="./sound/sound.mp3" autoplay></audio>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="./config.js"></script>
-    <script src="./js/main.js"></script>
 
-  </body>
+  <script>
+    const calculateLoveDays = () => {
+      const startDate = new Date(2025, 4, 2); // 2/5/2025
+      const diff = Date.now() - startDate;
+      return Math.max(0, Math.floor(diff / 86400000));
+    };
+
+    const romanticMessages = [
+      "Em ak~",
+      "Từ lúc gặp em",
+      "Thế giới của anh bừng sáng... ✨",
+      "Mỗi ngày bên em... ☀️",
+      "Là trang sách đẹp nhất đời anh... 📖",
+      "Iu em nhìu ❤",
+      "🥰"
+    ];
+
+    let currentMessage = 0;
+    let isAnimating = false;
+
+    const typeWriter = (text, element, speed = 50) => {
+      return new Promise(resolve => {
+        let i = 0;
+        element.innerHTML = '';
+        const type = () => {
+          if (i < text.length) {
+            element.innerHTML += text[i++];
+            setTimeout(type, speed);
+          } else resolve();
+        }
+        type();
+      });
+    };
+
+    const createHearts = (container) => {
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.style.cssText = `
+          position: absolute;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          font-size: ${Math.random() * 30 + 20}px;
+          opacity: ${Math.random() * 0.5 + 0.5};
+          animation: floatHeart ${Math.random() * 3 + 2}s infinite;
+          animation-delay: ${Math.random() * 2}s;
+        `;
+        container.appendChild(heart);
+      }
+    };
+
+    const showFinalAnimation = () => {
+      const container = document.createElement('div');
+      container.className = 'eternal-container';
+      container.innerHTML = `
+        <div style="font-size: 4rem; text-align: center;">
+          Q<span class="heart-icon">❤️</span>L
+        </div>
+        <div class="days-counter">
+         
+        </div>
+      `;
+      
+      createHearts(container);
+      document.body.appendChild(container);
+      
+      // Hiệu ứng pháo hoa
+      createFireworks();
+    };
+
+    const createFireworks = () => {
+      for (let i = 0; i < 30; i++) {
+        const firework = document.createElement('div');
+        firework.style.cssText = `
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: ${i % 2 ? '#ff69b4' : '#ffd700'};
+          border-radius: 50%;
+          left: ${Math.random() * 95}vw;
+          top: ${Math.random() * 95}vh;
+          animation: explode 1s ease-out ${i * 0.1}s;
+        `;
+        document.body.appendChild(firework);
+        setTimeout(() => firework.remove(), 1000);
+      }
+    };
+
+    document.getElementById('loveButton').addEventListener('click', () => {
+      document.getElementById('loveButton').style.display = 'none';
+      document.querySelector('.romantic-title').style.animation = 'none';
+      
+      const showMessages = async () => {
+        while (currentMessage < romanticMessages.length) {
+          await typeWriter(romanticMessages[currentMessage], document.getElementById('loveMessage'));
+          await new Promise(r => setTimeout(r, 2500));
+          currentMessage++;
+        }
+        showFinalAnimation();
+      };
+      
+      showMessages();
+    });
+
+    // Hiệu ứng nhạc nền
+    const backgroundMusic = new Audio('https://assets.mixkit.co/music/preview/mixkit-romantic-chopin-nocturne-479.mp3');
+    backgroundMusic.loop = true;
+    document.addEventListener('click', () => {
+      backgroundMusic.play().catch(() => {});
+      document.body.style.cursor = 'none';
+    }, { once: true });
+  </script>
+</body>
 </html>
